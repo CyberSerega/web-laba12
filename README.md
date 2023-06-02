@@ -19,211 +19,329 @@
 <h2>Решение задач</h2>
 
 ```php
-<h4>Задание 1: </h4>
+<h3>Задание1</h3>
 <?php
-$var = "hello";
-echo $var[0];
-echo $var[1];
-echo $var[4];
+$array = range(1, 100);
+$sum =(1+100)*50;
+echo "Сумма элементов массива равна " . $sum;
+?>
+<h3>Задание2</h3>
+<?php
+function callb($n)
+{
+    return strtoupper($n);
+}
+$array = ['a','b','c','d','e'];
+$array = array_map('callb',$array);
+print_r($array);
+?>
+<h3>Задание3</h3>
+<?php
+$arr = range(1, 100);
+echo "В массиве " . count($arr) . " элементов.";
+?>
+<h3>Задание4</h3>
+<?php
+$arr = range(1, 100);
+echo "Последний элемент массива равен " . $arr[count($array)-1];
 ?>
 
-
-<h4>Задание 2: </h4>
+<h3>Задание5</h3>
 <?php
-$sec = 60*60;
-echo "В часе $sec секунд"
+$arr = range(1, 5);
+if (in_array(3, $arr))
+	echo "Массив содержит элемент, равный 3.";
+else echo "Массив не содержит элемент, равный 3."
 ?>
-
-
-<h4>Задание 3: </h4>
+<h3>Задание6</h3>
 <?php
-	$var = 1;
-	$var += 12;
-	$var -= 14;
-	$var *= 5;
-	$var /= 7;
-	$var += 1;
-	$var -= 1;
-	echo $var;
+$arr = [1, 2, 3, 4, 5];
+$sum=0;
+for ($i = 0; $i<count($arr); $i++) {
+    $sum+=$arr[$i];
+}
+echo "Сумма элементов массива равна " . $sum;
 ?>
-
-
-<h4>Задание 4: </h4>
+<h3>Задание7</h3>
 <?php
-	$a = 3;
-	echo "Значение переменной \$a равно $a";
+$arr = [1, 2, 3, 4, 5];
+$res=1;
+for ($i = 0; $i<count($arr); $i++) {
+    $res*=$arr[$i];
+}
+echo "Произведение элементов массива равно " . $res;
 ?>
-
-
-<h4>Задание 5: </h4>
+<h3>Задание8</h3>
 <?php
-	$a = 10;
-	$b = 2;
-	$c = $a+$b;
-	echo "\$a+\$b = $c <br>";
-	$c = $a-$b;
-	echo "\$a-\$b = $c <br>";
-	$c = $a*$b;
-	echo "\$a*\$b = $c <br>";
-	$c = $a/$b;
-	echo "\$a/\$b = $c <br>";
+$arr = [1, 2, 3, 4, 5];
+$res=array_sum($arr)/count($arr);
+echo "Cреднее арифметическое элементов массива  равно " . $res;
 ?>
-
-
-<h4>Задание 6: </h4>
+<h3>Задание9</h3>
 <?php
-	$a = 10;
-	$b = 2;
-	$c = 5;
-	$result = $a+$b+$c;
-	echo "\$a+\$b+\$c = $result";
+$array = range(1, 100);
+echo "Массив, заполненный числами от 1 до 100:";
+print_r($array);
 ?>
-
-
-<h4>Задание 7: </h4>
+<h3>Задание10</h3>
 <?php
-	$a = 17;
-	$b = 10;
-	$c = $a-$b;
-	$d = 7;
-	$result = $c+$d;
-	echo "\$result = $result";
+$array = range('a', 'z');
+echo "Массив, заполненный буквами от 'a' до 'z':";
+print_r($array);
 ?>
-
-
-<h4>Задание 8: </h4>
+<h3>Задание11</h3>
 <?php
-	$a = 'Привет, Мир!';
-	echo $a;
+$array = range(1,9);
+echo implode("-", $array);
 ?>
-
-
-
-<h4>Задание 9: </h4>
+<h3>Задание12</h3>
 <?php
-	$text1 = 'Привет, '; 
-	$text2 = 'Мир!'; 
-	echo $text1 . $text2;
+$sum =(1+100)*50;
+echo "Сумма чисел от 1 до 100 равна " . $sum;
 ?>
-
-
-<h4>Задания 10,11: </h4>
+<h3>Задание13</h3>
 <?php
-	$name = 'Сергей'; 
-	$age = '19'; 
-	echo "Привет, $name <br>";
-	echo "Мне $age лет!";
+$arr = range(1,10);
+echo "Произведение чисел от 1 до 100 равно " . array_product($arr);
 ?>
-
-<h4>Задание 12: </h4>
+<h3>Задание14</h3>
 <?php
-	$text = 'abcde';  
-	echo $text[0] . $text[2] . $text[4];
+$arr1 = [1, 2, 3];
+$arr2 = ['a', 'b', 'c'];
+$result = array_merge($arr1, $arr2);
+echo "Итоговый массив:";
+print_r($result);
 ?>
-
-
-
-<h4>Задание 13: </h4>
+<h3>Задание15</h3>
 <?php
-	$text = 'abcde';  
-	$text[0] = '!';
-	echo "Вот измененная строка $text";
+$arr = [1, 2, 3, 4, 5];
+$result=array_slice($arr,1,3);
+echo "Итоговый массив:";
+print_r($result);
 ?>
-
-
-<h4>Задание 14: </h4>
+<h3>Задание16</h3>
 <?php
-	$num = 12345;
-	$sum = 0;
-    while($num!=0)
-	{
-		$sum+=$num%10;
-		$num = $num/10;
-	}	
-	echo "Сумма цифр числа 12345 равна $sum";
+$arr = [1, 2, 3, 4, 5];
+array_splice($arr, 1, 2);
+echo "Итоговый массив:";
+print_r($arr);
 ?>
-
-
-			
-<h4>Задание 15: </h4>
+<h3>Задание17</h3>
 <?php
-	echo "В часе " . 60*60 . " секунд <br>";
-	echo "В сутках " . 60*60*24 . " секунд <br>";
-	echo "В месяцe " . 60*60*24*30 . " секунд <br>";
+$arr = range(1,5);
+$arr1 = array_splice($arr, 1, 3);
+echo "Новый массив:";
+print_r($arr1);
 ?>
-
-
-<h4>Задание 16: </h4>
-	<?php
-	$hour = 60 * 60;
-	echo $hour . ' Секунд в часе! ';
-	$day = $hour * 24;
-	echo $day . ' Секунд в дне! ';
-	$month = $day * 30;
-	echo $month . ' Секунд в месяце! ';
-	?>
-
-
-<h4>Задание 17: </h4>
+<h3>Задание18</h3>
 <?php
-	date_default_timezone_set('Asia/Sakhalin');
-	echo date('h:i:s a', time());
+$arr1 = range(1,5);
+$arr2 = ['a', 'b', 'c'];
+array_splice($arr1, 3, 0,$arr2);
+echo "Итоговый массив:";
+print_r($arr1);
 ?>
-
-
-<h4>Задание 18: </h4>
+<h3>Задание19</h3>
 <?php
-	$num = 7;
-	echo "Это число $num <br>";
-	$num*=$num;
-	echo  "Это его квадрат: $num"
-?>		
-
-
-<h4>Задание 19: </h4>
-<?php
-$var = 47;
-$var += 7;
-$var -= 18;
-$var *= 10;
-$var /= 20;
-echo $var;
-
+$arr = range(1,5);
+array_splice($arr, 1, 0,array('a','b'));
+array_splice($arr, 6, 0, 'c');
+array_splice($arr, 8, 0, 'e');
+echo "Итоговый массив:";
+print_r($arr);
 ?>
-
-
-<h4>Задание 20: </h4>
+<h3>Задание20</h3>
 <?php
-$text = 'Я';
-$text .=' хочу';
-$text .=' знать';
-$text .=' PHP!';
-echo $text;
+$arr = array('a'=>1, 'b'=>2, 'c'=>3);
+$keys = array_keys($arr);
+$values = array_values($arr);
+echo "Ключи: ";
+print_r($keys);
+echo "<br>";
+echo "Значения: ";
+print_r($values);
 ?>
-
-
-<h4>Задание 21: </h4>
+<h3>Задание21</h3>
 <?php
-$var = 10;
-$var++;
-$var++;
-$var--;
-echo $var;
+$arr1 = ['a', 'b', 'c'];
+$arr2 = [1, 2, 3];
+$res = array_combine($arr1,$arr2);
+echo "Итоговый массив: ";
+print_r($res);
 ?>
-
-
-<h4>Задание 22: </h4>
+<h3>Задание22</h3>
 <?php
-$var = 10;
-$var +=7;
-$var++;
-$var--;
-$var +=12;
-$var *=7;
-$var -=15;
-echo $var;
+$arr = array('a'=>1, 'b'=>2, 'c'=>3);
+$arr = array_flip($arr);
+$values = array_values($arr);
+echo "Изменённый массив: ";
+print_r($arr);
 ?>
-
+<h3>Задание23</h3>
+<?php
+$arr = range(1,5);
+$arr = array_reverse($arr);
+echo "Изменённый массив: ";
+print_r($arr);
+?>
+<h3>Задание24</h3>
+<?php
+$arr = ['a', '-', 'b', '-', 'c', '-', 'd'];
+$index = array_search('-',$arr);
+echo "Позиция первого элемента '-': $index";
+?>
+<h3>Задание25</h3>
+<?php
+$arr = ['a', '-', 'b', '-', 'c', '-', 'd'];
+$index = array_search('-',$arr);
+array_splice($arr,$index,1);
+echo "Изменённый массив: ";
+print_r($arr);
+?>
+<h3>Задание26</h3>
+<?php
+$arr = ['a', 'b', 'c', 'd', 'e'];
+$arr[0] = '!';
+$arr[3] = '!!';
+echo "Изменённый массив: ";
+print_r($arr);
+?>
+<h3>Задание27</h3>
+<?php
+$arr = array('3'=>'a', '1'=>'c', '2'=>'e', '4'=> 'b');
+echo "Текущий массив: <br> ";
+print_r($arr);
+echo "<br>";
+ksort ($arr);
+echo "ksort: <br>";
+print_r($arr);
+echo "<br>";
+krsort($arr);
+echo "krsort: <br>";
+print_r($arr);
+echo "<br>";
+rsort($arr);
+echo "rsort: <br>";
+print_r($arr);
+echo "<br>";
+sort($arr);
+echo "rsort: <br>";
+print_r($arr);
+?>
+<h3>Задание28</h3>
+<?php
+$arr = array('a'=>1, 'b'=>2, 'c'=>3);
+$rand = array_rand($arr);
+echo "Случайный ключ: " . $rand;
+?>
+<h3>Задание29</h3>
+<?php
+$arr = array('a'=>1, 'b'=>2, 'c'=>3);
+$rand = $arr[array_rand($arr)];
+echo "Случайный элемент: " . $rand;
+?>
+<h3>Задание30</h3>
+<?php
+$arr = range(1,7);
+shuffle($arr);
+echo "Изменённый массив: <br>";
+print_r($arr);
+?>
+<h3>Задание31</h3>
+<?php
+$arr = range(1,25);
+shuffle($arr);
+echo "Изменённый массив: <br>";
+print_r($arr);
+?>
+<h3>Задание32</h3>
+<?php
+$arr = range('a','z');
+shuffle($arr);
+echo "Созданный массив: <br>";
+print_r($arr);
+?>
+<h3>Задание33</h3>
+<?php
+$arr = range('a','z');
+shuffle($arr);
+$str="";
+$rand = array_rand($arr);
+for($i=0; $i<6; $i++)
+{
+	if ($rand+$i>25) $rand=0;
+	$index = $rand+$i;
+	$str.=$arr[$index];
+}
+echo $str;
+?>
+<h3>Задание34</h3>
+<?php
+$arr = ['a', 'b', 'c', 'b', 'a'];
+$res = [];
+echo "Изначальный массив: <br>";
+print_r($arr);
+echo "<br>";
+for($i=0; $i<count($arr); $i++)
+{
+	if (!in_array($arr[$i],$res)) array_push($res,$arr[$i]);
+}
+echo "Изменённый массив: <br>";
+print_r($res);
+?>
+<h3>Задание35</h3>
+<?php
+$arr = range(1,5);
+echo "Первый элемент: " . array_shift($arr);
+echo "<br>";
+echo "Последний элемент: " . array_pop($arr);
+echo "<br>";
+echo "Изменённый массив: <br>";
+print_r($arr);
+?>
+<h3>Задание36</h3>
+<?php
+$arr = range(1,5);
+array_unshift($arr,0);
+array_push($arr,6);
+echo "Изменённый массив: <br>";
+print_r($arr);
+?>
+<h3>Задание37</h3>
+<?php
+$arr = range(1,8);
+for($i=0; $i<4; $i++)
+{
+	echo array_shift($arr);
+	echo array_pop($arr);
+}
+?>
+<h3>Задание38</h3>
+<?php
+$arr = ['a','b','c'];
+$str = '---';
+$str1 = str_split($str);
+array_splice($arr,3,0,$str1);
+echo "Изменённый массив: <br>";
+print_r($arr);
+?>
+<h3>Задание39</h3>
+<?php
+$arr = array_fill(0,10,'x');
+echo "Созданный массив: <br>";
+print_r($arr);
+?>
+<h3>Задание40</h3>
+<?php
+$arr = range(1,20);
+$arrays = array_chunk($arr,4);
+for($i=0; $i<5; $i++)
+{
+	echo "Массив $i <br>";
+	print_r($arrays[$i]);
+	echo "<br>";
+}
+?>
 ```
 <h2 align="center">Вывод</h2>
 <p align="justify">Таким образом, я научился работать с PHP, все поставленные цели были выполнены. </p>
